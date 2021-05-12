@@ -9,7 +9,8 @@ Please follow the steps below, to  make use of this app.
 > https://crud-task-zuri.herokuapp.com/
 
 
-#### INSTALL ALL THE REME
+#### INSTALL ALL THE REQUIRED DEPENDENCIES
+> ```npm install```
 
 
 #### AVAILABLE ROUTES: 

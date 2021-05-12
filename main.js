@@ -24,7 +24,7 @@ const DataSchema = new Schema({
 
 const DataModel = model('Data', DataSchema)
 
-app.get(['/', '/fetch'], (req, res) => {
+app.get(['/', '/users'], (req, res) => {
 	DataModel.find({}, (error, data) => {
 	
 		if (error) return res.json({
@@ -35,7 +35,7 @@ app.get(['/', '/fetch'], (req, res) => {
 	})
 })
 
-app.get('/fetch/:id', (req, res) => {
+app.get('/users/:id', (req, res) => {
 	DataModel.find({ _id: req.params.id }, (error, data) => {
 		if (error) return res.json({
 			message: "Fetch Error! Can't find any item with the provided ID."
@@ -44,7 +44,7 @@ app.get('/fetch/:id', (req, res) => {
 	})
 })
 
-app.post('/add', urlparser, (req, res) => {
+app.post('/create', urlparser, (req, res) => {
 	
     const { name, email, country } = req.body
     
@@ -63,7 +63,7 @@ app.post('/add', urlparser, (req, res) => {
 	
 })
 
-app.delete('/delete/:id', (req, res) => {
+app.delete('/remove/:id', (req, res) => {
 	DataModel.deleteOne(
 		{ _id: req.params.id}, (error, data) => {
 			if (error) return res.json({
@@ -77,7 +77,7 @@ app.delete('/delete/:id', (req, res) => {
 	)
 })
 
-app.put('/update/:id', urlparser, (req, res) => {
+app.put('/edit/:id', urlparser, (req, res) => {
 
 	let update = req.body
 	DataModel.updateOne(

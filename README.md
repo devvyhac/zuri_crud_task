@@ -56,7 +56,14 @@ details of a single user in the record.
 > ```Edit the entries in a single user record```
 
 Send a `PUT` request to `/edit/:id` together 
-with the entries you want to alter in the request body
+with the entries you want to alter in the request body.
+One or more of the following field(s) is allowed.
+
+```
+- name
+- email
+- country
+```
 
 
 ###### DELETE OPERATION

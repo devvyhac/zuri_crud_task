@@ -28,7 +28,7 @@ Please follow the steps below, to  make use of this app.
 
 
 ###### **CREATE OPERATION**
-> ```Create a user```
+> ```Create a user in the users record```
 
 Send a `POST` request to `/create` along 
 with the data that consists of the following fields
@@ -41,12 +41,12 @@ in the request body.
 
 
 ###### **READ OPERATION**
-> ```List all users```
+> ```List all users in the users record```
 
 Send a `GET` request to `/users or /` to get a
 list of all the users in the record.
 
-> ```Get only one user```
+> ```Get only one user from the users record```
 
 Send a `GET` request to `/users/:user_id` to return the 
 details of a single user in the record.

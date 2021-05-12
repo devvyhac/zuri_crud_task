@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 
 const urlparser = bodyParser.urlencoded({ extended: false })
 const { Schema, model } = mongoose
+const port = process.env.PORT || 8089
 
 mongoose.connect('mongodb+srv://devvyhac:ZuriCrud@zuricrudtask.m2ydc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
 { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
@@ -93,6 +94,6 @@ app.put('/update/:id', urlparser, (req, res) => {
 		})
 })
 
-app.listen(3000, () => {
-	console.log("server running at localhost:3000")
+app.listen(port, () => {
+	console.log(`server running at localhost:${port}`)
 })

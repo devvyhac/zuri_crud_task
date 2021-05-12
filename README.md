@@ -4,12 +4,12 @@
 
 Please follow the steps below, to  make use of this app.
 
-### Base url: 
+#### Base url: 
 
 > https://crud-task-zuri.herokuapp.com/
 
 
-#### Available Routes: 
+#### AVAILABLE ROUTES: 
 ```
 /create
 /users
@@ -18,7 +18,7 @@ Please follow the steps below, to  make use of this app.
 /remove/:id
 ```
 
-#### USAGE
+## USAGE
 
 > **_Send HTTP request to the appropriate endpoint._**
 
@@ -65,3 +65,6 @@ with the entries you want to alter in the request body
 ## Example below 
 ###### GET Request: 
 > https://crud-task-zuri.herokuapp.com/users/609b80f3cdb7d3211d584a36
+
+
+> `Created by Devvyhac`

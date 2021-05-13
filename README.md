@@ -4,7 +4,7 @@
 
 Please follow the steps below, to  make use of this app.
 
-#### Base url: 
+#### Base / API url: 
 
 > https://crud-task-zuri.herokuapp.com/
 
@@ -34,9 +34,11 @@ Send a `POST` request to `/create` along
 with the data that consists of the following fields
 in the request body.
 ```
-1. name 
-2. email
-3. country
+{
+   "name": <value >,
+   "email": <value>,
+   "country": <value>
+}
 ```
 
 

@@ -50,7 +50,7 @@ list of all the users in the record.
 
 > ```Get only one user from the users record```
 
-Send a `GET` request to `/users/:user_id` to return the 
+Send a `GET` request to `/users/:id` to return the 
 details of a single user in the record.
 
 

@@ -77,7 +77,7 @@ with the entries you want to alter in the request body
 
 ## Example below 
 ###### GET Request: 
-> https://crud-task-zuri.herokuapp.com/users/609b80f3cdb7d3211d584a36
+> https://crud-task-zuri.herokuapp.com/users/609be633e4448700045a706e
 
 
 > `Created by Devvyhac`

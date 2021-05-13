@@ -30,7 +30,10 @@ app.get(['/', '/users'], (req, res) => {
 		if (error) return res.json({
 			message: "Fetch Error! please try again."
 		});
-		else return res.json({ data });
+		else return res.json({ 
+			message: "Success! All users data fetched successfully.",
+			data: data
+		});
 		
 	})
 })
@@ -40,7 +43,10 @@ app.get('/users/:id', (req, res) => {
 		if (error) return res.json({
 			message: "Fetch Error! Can't find any item with the provided ID."
 		});
-		else return res.json({ data })
+		else return res.json({ 
+			message: "Success! User data fetched sucessfully.",
+			data: data
+		})
 	})
 })
 
@@ -70,8 +76,7 @@ app.delete('/remove/:id', (req, res) => {
 				message: "Delete Error! no item with the given ID."
 			});
 			else if (!error) return res.json({
-				message: "Success! Data deleted successfully.",
-				data: data
+				message: "Success! Data deleted successfully."
 			})
 		}
 	)
@@ -88,8 +93,7 @@ app.put('/edit/:id', urlparser, (req, res) => {
 				message: "Update Error! Can't find the item with the given id"
 			});
 			else return res.json({
-				message: "Success! Data updated successfully.",
-				data: data
+				message: "Success! Data updated successfully."
 			})
 		})
 })

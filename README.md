@@ -15,11 +15,11 @@ Please follow the steps below, to  make use of this app.
 
 #### AVAILABLE ROUTES: 
 ```
-/create
-/users
-/users/:id
-/edit/:id
-/remove/:id
+/create       (for POST request)
+/users        (for GET request)
+/users/:id    (for single GET request)
+/edit/:id     (for PUT request)
+/remove/:id   (for DELETE request)
 ```
 
 ## USAGE

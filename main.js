@@ -47,7 +47,7 @@ app.get('/users', (req, res) => {
 app.get('/users/:id', (req, res) => {
 	DataModel.find({ _id: req.params.id }, (error, data) => {
 		if (error) return res.status(404).json({
-			message: "Fetch Error! Can't find any item with the provided ID."
+			message: "Fetch Error! Can't find any user with the provided ID."
 		});
 		else return res.status(200).json({ 
 			message: "Success! User data fetched sucessfully.",

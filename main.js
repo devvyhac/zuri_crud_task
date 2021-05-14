@@ -24,7 +24,17 @@ const DataSchema = new Schema({
 
 const DataModel = model('Data', DataSchema)
 
-app.get(['/', '/users'], (req, res) => {
+app.get('/', (req, res) => {
+	res.send("Welcome to Devvyhav's CRUD API.\n
+	Please follow the steps below to use the API.\n
+	Send request to appropriate route, eg.\n\n
+	POST request to (/create) route.\n
+	GET request to (/users) route.\n
+	PUT request to (/edit) route.\n
+	DELETE request to (/remove) route.\n")
+})
+
+app.get('/users', (req, res) => {
 	DataModel.find({}, (error, data) => {
 	
 		if (error) return res.json({

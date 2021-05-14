@@ -66,7 +66,7 @@ app.post('/create', urlparser, (req, res) => {
     	});
     	else {
     		if (obj) return res.status(409).json({
-    			message: "Email address already exists, please use another one."
+    			message: "User with the email address already exists, please use another one."
     		});
     		else {
     			

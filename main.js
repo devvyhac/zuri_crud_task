@@ -16,9 +16,9 @@ mongoose.connect('mongodb+srv://devvyhac:ZuriCrud@zuricrudtask.m2ydc.mongodb.net
 
 const DataSchema = new Schema({
 
-	name: String,
-	email: String,
-	country: String
+	name: {type: String, require: true},
+	email: {type: String, require: true},
+	country: {type: String, require: true}
 	
 })
 
@@ -59,20 +59,32 @@ app.get('/users/:id', (req, res) => {
 app.post('/create', urlparser, (req, res) => {
 	
     const { name, email, country } = req.body
-    
-	DataModel.create({ name, email, country }, (error, newData) => {
+
+    DataModel.findOne({email: req.body.email}, (err, obj) => {
+    	if (err) return res.json({
+    		message: "Oops! Something just went wrong while querying the collection."
+    	});
+    	else {
+    		if (obj) return res.json({
+    			message: "Email address already exists, please use another one."
+    		});
+    		else {
+    			
+				DataModel.create({ name, email, country }, (error, newData) => {
 	
-		if (error) return res.json({
-			message: "Create Error! unable to save post data"
-		});
+					if (error) return res.json({
+						message: "Create Error! unable to save post data"
+					});
 		
-		else return res.json({
-			message: "Success! data saved successfully.",
-			data: newData
-		})
+					else return res.json({
+						message: "Success! data saved successfully.",
+						data: newData
+					})
 		
+				})
+			}
+		}
 	})
-	
 })
 
 app.delete('/remove/:id', (req, res) => {

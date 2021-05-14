@@ -45,7 +45,7 @@ in the request body.
 ###### **READ OPERATION**
 > ```List all users in the users record```
 
-Send a `GET` request to `/users or /` to get a
+Send a `GET` request to `/users` to get a
 list of all the users in the record.
 
 > ```Get only one user from the users record```

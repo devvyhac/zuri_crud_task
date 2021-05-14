@@ -46,7 +46,7 @@ app.get('/users', (req, res) => {
 
 app.get('/users/:id', (req, res) => {
 	DataModel.find({ _id: req.params.id }, (error, data) => {
-		if (error) return res.status(400).json({
+		if (error) return res.status(404).json({
 			message: "Fetch Error! Can't find any item with the provided ID."
 		});
 		else return res.status(200).json({ 
@@ -65,14 +65,14 @@ app.post('/create', urlparser, (req, res) => {
     		message: "Oops! Something just went wrong while querying the collection."
     	});
     	else {
-    		if (obj) return res.status(403).json({
+    		if (obj) return res.status(409).json({
     			message: "Email address already exists, please use another one."
     		});
     		else {
     			
 				DataModel.create({ name, email, country }, (error, newData) => {
 	
-					if (error) return res.status(403).json({
+					if (error) return res.status(500).json({
 						message: "Create Error! unable to save post data"
 					});
 		
@@ -107,13 +107,13 @@ app.put('/edit/:id', urlparser, (req, res) => {
 		{ _id: req.params.id },
 		{ ...update }, 
 		(error, data) => {
-			if (error) return res.status(403).json({
+			if (error) return res.json({
 				message: "Update Error! Can't find the item with the given id"
 			});
-			else return res.status(201).json({
+			else return res.json({
 				message: "Success! Data updated successfully."
 			})
-		})
+	})
 })
 
 app.listen(port, () => {

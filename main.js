@@ -1,12 +1,13 @@
 const mongoose = require('mongoose')
 const app = require('express')()
 const bodyParser = require('body-parser')
+require('dotenv').config()
 
 const urlparser = bodyParser.urlencoded({ extended: false })
 const { Schema, model } = mongoose
 const port = process.env.PORT || 8089
 
-mongoose.connect('mongodb+srv://devvyhac:ZuriCrud@zuricrudtask.m2ydc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+mongoose.connect(process.env.DB,
 { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
 
 	if (err) console.log(err);
